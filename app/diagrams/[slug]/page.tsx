@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 const reader = createReader(process.cwd(), keystaticConfig);
+const BASE_URL = "https://origami.cahenre.com.br";
 
 type Params = Promise<{ slug: string }>;
 
@@ -27,17 +28,25 @@ export async function generateMetadata({
   const diagram = await reader.collections.diagrams.read(slug);
   if (!diagram) return {};
 
+  const url = `${BASE_URL}/diagrams/${slug}`;
+
   return {
-    title: diagram.title,
+    title: `${diagram.title} | Origami Diagram Archive`,
     description: diagram.shortDescription,
-    alternates: { canonical: `/diagrams/${slug}` },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
       type: "article",
       title: diagram.title,
       description: diagram.shortDescription,
-      url: `/diagrams/${slug}`,
+      url,
       images: diagram.coverImage
-        ? [{ url: diagram.coverImage }]
+        ? [{ url: `${BASE_URL}${diagram.coverImage}` }]
         : [],
     },
     twitter: {
@@ -45,12 +54,11 @@ export async function generateMetadata({
       title: diagram.title,
       description: diagram.shortDescription,
       images: diagram.coverImage
-        ? [diagram.coverImage]
+        ? [`${BASE_URL}${diagram.coverImage}`]
         : [],
     },
   };
 }
-
 /* ============================= */
 /* MARKDOC COMPONENTS */
 /* ============================= */
