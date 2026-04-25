@@ -115,6 +115,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
                 width={1200}
                 height={900}
                 className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                loading={index < 3 ? "eager" : "lazy"}
               />
             </div>
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-100 transition" />
