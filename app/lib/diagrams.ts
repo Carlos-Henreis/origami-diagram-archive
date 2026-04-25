@@ -1,13 +1,7 @@
 import { createReader } from "@keystatic/core/reader";
 import path from "node:path";
-import { stat } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import keystaticConfig from "../../keystatic.config";
-
-type MarkdocNode = {
-  name?: string;
-  attributes?: Record<string, unknown>;
-  children?: MarkdocNode[];
-};
 
 export type DiagramSummary = {
   slug: string;
@@ -20,25 +14,6 @@ export type DiagramSummary = {
 };
 
 const reader = createReader(process.cwd(), keystaticConfig);
-
-function collectImagesFromNode(node?: MarkdocNode): string[] {
-  if (!node) return [];
-
-  const images: string[] = [];
-  const walk = (current: MarkdocNode) => {
-    if (current.name === "image") {
-      const src = current.attributes?.src;
-      if (typeof src === "string") {
-        images.push(src);
-      }
-    }
-
-    current.children?.forEach(walk);
-  };
-
-  walk(node);
-  return images;
-}
 
 async function getDiagramUpdatedAt(slug: string): Promise<string> {
   const baseDir = path.join(process.cwd(), "src/content/diagrams");
@@ -61,15 +36,39 @@ async function getDiagramUpdatedAt(slug: string): Promise<string> {
   return new Date(Math.max(...timestamps)).toISOString();
 }
 
+async function collectImagesFromDescriptionFile(slug: string): Promise<string[]> {
+  const descriptionPath = path.join(
+    process.cwd(),
+    "src/content/diagrams",
+    slug,
+    "description.mdoc"
+  );
+
+  try {
+    const content = await readFile(descriptionPath, "utf8");
+
+    const markdownImageMatches = Array.from(
+      content.matchAll(/!\[[^\]]*\]\(([^)]+)\)/g)
+    ).map((match) => match[1]);
+
+    const markdocImageTagMatches = Array.from(
+      content.matchAll(/\{[%{]\s*image[^%}]*src=["']([^"']+)["'][^%}]*[%}]\}/g)
+    ).map((match) => match[1]);
+
+    return [...markdownImageMatches, ...markdocImageTagMatches];
+  } catch {
+    return [];
+  }
+}
+
 export async function getDiagramSummaries(): Promise<DiagramSummary[]> {
   const diagrams = await reader.collections.diagrams.all();
 
   return Promise.all(
     diagrams.map(async ({ slug, entry }) => {
-      const { node } = await entry.description();
-      const contentImages = collectImagesFromNode(node as MarkdocNode);
+      const descriptionImages = await collectImagesFromDescriptionFile(slug);
       const images = Array.from(
-        new Set([entry.coverImage, ...contentImages].filter(Boolean))
+        new Set([...descriptionImages, entry.coverImage].filter(Boolean))
       ) as string[];
 
       return {
