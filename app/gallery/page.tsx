@@ -37,7 +37,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: "Image Gallery | Origami Diagram Archive",
       description: "Explore the latest images from our origami diagram collection. Click on any card to open a modal with a carousel and access the full publication.",
-      images: [{ url: `${BASE_URL}/twitter-image.png` }],
+      images: [{ url: `${BASE_URL}/og-image.png` }],
     },
   };
 }

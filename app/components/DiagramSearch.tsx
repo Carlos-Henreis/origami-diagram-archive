@@ -16,13 +16,13 @@ const sortLabels: Record<SortOption, string> = {
 export default function DiagramSearch({ diagrams }: { diagrams: DiagramSummary[] }) {
   const [query, setQuery] = useState("");
   const [sortBy, setSortBy] = useState<SortOption>("recent");
-
   const filtered = useMemo(() => {
     const result = diagrams.filter((d) =>
       d.title.toLowerCase().includes(query.toLowerCase())
     );
 
     result.sort((a, b) => {
+      console.log("Sorting by", sortBy, a.title, b.title);
       if (sortBy === "alphabetical") {
         return a.title.localeCompare(b.title, "pt-BR");
       }
@@ -105,7 +105,7 @@ export default function DiagramSearch({ diagrams }: { diagrams: DiagramSummary[]
           ))
         ) : (
           <p className="text-zinc-500 col-span-full text-center py-10">
-            Nenhum diagrama encontrado para &quot;{query}&quot;
+            No diagrams found for &quot;{query}&quot;
           </p>
         )}
       </div>
