@@ -2,8 +2,9 @@ import { config, fields, collection } from '@keystatic/core';
 
 export default config({
   storage: {
-    kind: 'github',
-    repo: 'Carlos-Henreis/origami-diagram-archive',
+    //kind: 'github',
+    //repo: 'Carlos-Henreis/origami-diagram-archive',
+    kind: 'local'
   },
   collections: {
     diagrams: collection({
@@ -19,6 +20,13 @@ export default config({
 
         shortDescription: fields.text({
           label: 'Short Description'
+        }),
+
+        updatedAt: fields.datetime({
+          label: 'Last Updated',
+          defaultValue: {
+            kind: 'now'
+          }
         }),
 
         coverImage: fields.image({
