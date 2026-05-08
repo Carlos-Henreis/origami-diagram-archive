@@ -32,6 +32,12 @@ export default function RootLayout({
                 >
                   Gallery
                 </Link>
+                <Link
+                  href="/origami-symbols"
+                  className="rounded-full px-4 py-2 text-sm text-zinc-300 hover:bg-zinc-900 hover:text-white transition"
+                >
+                  Origami Symbols
+                </Link>
               </nav>
             </div>
           </header>
