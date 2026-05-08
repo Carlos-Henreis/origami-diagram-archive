@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16.933325mm"
+   height="16.933334mm"
+   viewBox="0 0 16.933325 16.933334"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs1"><marker
+       style="overflow:visible"
+       id="Triangle-3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid"><path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-1" /></marker></defs><g
+     id="layer1"
+     transform="translate(-112.50001,-94.130012)"><g
+       id="g23"
+       transform="translate(22.033031,-46.012197)"
+       style="stroke:#ffffff"><g
+         id="g33"
+         transform="translate(-32.131222,-23.498919)"><g
+           id="g72"><rect
+             style="fill:#000000;stroke:none;stroke-width:0.196311;stroke-linejoin:bevel;stroke-dasharray:0.523494, 0.261749, 0.130874, 0.261749"
+             id="rect26"
+             width="16.933332"
+             height="16.933332"
+             x="110.0001"
+             y="94.25"
+             transform="translate(12.598103,69.391116)" /><path
+             style="fill:none;stroke:#ffffff;stroke-width:0.558414;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:0;marker-end:url(#Triangle-3)"
+             id="path23"
+             d="m -137.04704,171.65798 a 5.983006,5.983006 0 0 1 4.64932,-5.69937 5.983006,5.983006 0 0 1 6.66267,3.11574 5.983006,5.983006 0 0 1 -1.39327,7.22204 5.983006,5.983006 0 0 1 -7.34357,0.41366"
+             transform="scale(-1,1)" /><text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.50276px;line-height:1.4;font-family:Eurostile;-inkscape-font-specification:Eurostile;text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#ffffff;stroke:#ffffff;stroke-width:0.558414;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:0"
+             x="128.29338"
+             y="173.2916"
+             id="text23"><tspan
+               id="tspan23"
+               style="fill:#ffffff;stroke:#ffffff;stroke-width:0.558414;stroke-dasharray:none"
+               x="128.29338"
+               y="173.2916">90</tspan></text></g></g></g></g></svg>

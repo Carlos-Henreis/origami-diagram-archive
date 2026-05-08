@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16.933325mm"
+   height="16.933327mm"
+   viewBox="0 0 16.933325 16.933327"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs1"><marker
+       style="overflow:visible"
+       id="ColoredTriangle"
+       refX="-0.98939109"
+       refY="0.038053505"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid"
+       markerUnits="strokeWidth"><path
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:1"
+         d="M 2.885,0 -1.44,2.5 v -5 z"
+         id="path5" /></marker></defs><g
+     id="layer1"
+     transform="translate(-80.000015,-133.75)"><g
+       id="g62"><rect
+         style="fill:#000000;stroke:none;stroke-width:0.196311;stroke-linejoin:bevel;stroke-dasharray:0.523494, 0.261749, 0.130874, 0.261749"
+         id="rect57"
+         width="16.933332"
+         height="16.933332"
+         x="80.000008"
+         y="133.75" /><g
+         id="g61"
+         transform="translate(1.04384,0.5008408)"><rect
+           style="fill:#333333;stroke:#ffffff;stroke-width:0.3;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect58"
+           width="8.5472584"
+           height="8.5472574"
+           x="158.69104"
+           y="35.056519"
+           transform="rotate(44.99999)" /><path
+           style="fill:#ffffff;stroke:#ffffff;stroke-width:0.3;stroke-linejoin:bevel;stroke-dasharray:1.19999, 0.599998, 0.3, 0.599998;stroke-dashoffset:0"
+           d="m 81.379119,143.04398 h 12.08764"
+           id="path59" /><path
+           style="fill:none;stroke:#ffffff;stroke-width:0.3;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:0;marker-end:url(#ColoredTriangle)"
+           d="m 86.870281,139.56696 c -1.252053,-8.21277 3.815726,-4.59168 2.564174,-2.99155"
+           id="path61" /></g></g></g></svg>

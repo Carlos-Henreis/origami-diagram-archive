@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16.933325mm"
+   height="16.933334mm"
+   viewBox="0 0 16.933325 16.933334"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs1"><marker
+       style="overflow:visible"
+       id="ColoredTriangle-4"
+       refX="-0.98939109"
+       refY="0.038053505"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid"
+       markerUnits="strokeWidth"><path
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:1"
+         d="M 2.885,0 -1.44,2.5 v -5 z"
+         id="path5-9" /></marker></defs><g
+     id="layer1"
+     transform="translate(-80.000015,-94.130012)"><g
+       id="g31"
+       transform="translate(0,-0.86999969)"><rect
+         style="fill:#000000;stroke:none;stroke-width:0.196311;stroke-linejoin:bevel;stroke-dasharray:0.523494, 0.261749, 0.130874, 0.261749"
+         id="rect12"
+         width="16.933332"
+         height="16.933332"
+         x="80.000008"
+         y="95" /><path
+         style="fill:none;stroke:#ffffff;stroke-width:0.6;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:0;marker-end:url(#ColoredTriangle-4)"
+         d="m 83.613895,104.87449 c 11.750493,-8.47816 10.434573,-1.4877 7.754473,0.0946"
+         id="path77-1" /></g></g></svg>
