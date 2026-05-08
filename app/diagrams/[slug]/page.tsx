@@ -7,7 +7,7 @@ import { Metadata } from "next";
 import Accordion from "../../components/Accordion";
 import Link from 'next/link';
 // Se estiver usando lucide-react (comum em projetos shadcn/tailwind)
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, BookOpen, Download } from "lucide-react";
 
 const reader = createReader(process.cwd(), keystaticConfig);
 const BASE_URL = "https://origami.cahenre.com.br";
@@ -108,14 +108,36 @@ export default async function DiagramPage({
           </a>
         </div>
       )}
+      {/* Symbols Guide CTA */}
+      <div className="my-10 rounded-2xl border border-white/10 bg-zinc-900/70 p-5">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h2 className="text-lg font-semibold text-white">
+              New to origami diagrams?
+            </h2>
+            <p className="mt-1 text-sm leading-6 text-zinc-400">
+              Learn the symbols and folding notation used in our diagrams before
+              following the steps.
+            </p>
+          </div>
 
+          <Link
+            href="/origami-symbols"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white px-4 py-2.5 text-sm font-medium text-black transition hover:opacity-90"
+          >
+            <BookOpen size={16} />
+            Symbols Guide
+          </Link>
+        </div>
+      </div>
       {/* Description */}
       {content && (
         <article className="prose prose-invert max-w-none">
           {Markdoc.renderers.react(content, React)}
         </article>
       )}
-
       {/* Download Button */}
       {diagram.pdf && (
         <div className="mb-10">
