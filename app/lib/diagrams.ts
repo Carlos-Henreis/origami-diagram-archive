@@ -70,7 +70,7 @@ export async function getDiagramSummaries(): Promise<DiagramSummary[]> {
       const images = Array.from(
         new Set([...descriptionImages, entry.coverImage].filter(Boolean))
       ) as string[];
-
+      console.log(entry.updatedAt)
       return {
         slug,
         title: entry.title,
@@ -78,7 +78,7 @@ export async function getDiagramSummaries(): Promise<DiagramSummary[]> {
         shortDescription: entry.shortDescription,
         coverImage: entry.coverImage,
         images,
-        updatedAt: await getDiagramUpdatedAt(slug),
+        updatedAt: entry.updatedAt || (await getDiagramUpdatedAt(slug)),
       };
     })
   );

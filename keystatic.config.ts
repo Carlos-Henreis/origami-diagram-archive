@@ -2,9 +2,9 @@ import { config, fields, collection } from '@keystatic/core';
 
 export default config({
   storage: {
-    //kind: 'github',
-    //repo: 'Carlos-Henreis/origami-diagram-archive',
-    kind: 'local'
+    kind: 'github',
+    repo: 'Carlos-Henreis/origami-diagram-archive',
+    //kind: 'local'
   },
   collections: {
     diagrams: collection({
