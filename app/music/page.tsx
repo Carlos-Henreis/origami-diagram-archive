@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Copy, Github, Instagram, Mail, Music4, Sparkles } from "lucide-react";
+import { Github, Instagram, Mail, Music4, Sparkles } from "lucide-react";
 import { MusicCard, type MusicTrack } from "../components/music/MusicCard";
 import { SectionTitle } from "../components/music/SectionTitle";
+import { AttributionCopyButton } from "../components/music/AttributionCopyButton";
 
 const tracks: MusicTrack[] = [
   {
@@ -129,13 +130,7 @@ export default function MusicPage() {
             <p>Music by Origami Diagram Archive</p>
             <p>https://origami.cahenre.com.br/</p>
           </div>
-          <button
-            type="button"
-            className="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/20 px-3 py-2 text-sm text-zinc-100 transition hover:bg-white/10"
-            onClick={() => navigator.clipboard.writeText("Music by Origami Diagram Archive\nhttps://origami.cahenre.com.br/")}
-          >
-            <Copy className="h-4 w-4" /> Copy attribution
-          </button>
+          <AttributionCopyButton text={"Music by Origami Diagram Archive\nhttps://origami.cahenre.com.br/"} />
         </div>
       </section>
 
