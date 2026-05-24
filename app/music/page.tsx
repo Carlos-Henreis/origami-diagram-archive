@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Github, Instagram, Mail, Music4, Sparkles } from "lucide-react";
+import { Music4, Sparkles } from "lucide-react";
 import { MusicCard, type MusicTrack } from "../components/music/MusicCard";
 import { SectionTitle } from "../components/music/SectionTitle";
 import { AttributionCopyButton } from "../components/music/AttributionCopyButton";
@@ -141,23 +141,13 @@ export default function MusicPage() {
             <h3 className="text-lg font-medium text-zinc-100">Diagram Collection</h3>
             <p className="mt-1 text-sm text-zinc-400">Browse tutorials and diagram remakes.</p>
           </Link>
-          <Link href="/symbols" className="rounded-2xl border border-white/10 bg-zinc-900/70 p-6 transition hover:border-amber-200/30 hover:bg-zinc-800/80">
+          <Link href="/origami-symbols" className="rounded-2xl border border-white/10 bg-zinc-900/70 p-6 transition hover:border-amber-200/30 hover:bg-zinc-800/80">
             <h3 className="text-lg font-medium text-zinc-100">Origami Symbols</h3>
             <p className="mt-1 text-sm text-zinc-400">Learn the universal folding notation system.</p>
           </Link>
         </div>
       </section>
 
-      <section className="border-t border-zinc-800/80 bg-zinc-950/80">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 text-sm text-zinc-400 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-medium text-zinc-200">Origami Diagram Archive</p>
-          <div className="flex items-center gap-4">
-            <Link href="https://github.com" className="inline-flex items-center gap-2 hover:text-zinc-100"><Github className="h-4 w-4" />GitHub</Link>
-            <Link href="mailto:contact@origami.cahenre.com.br" className="inline-flex items-center gap-2 hover:text-zinc-100"><Mail className="h-4 w-4" />Contact</Link>
-            <Link href="https://instagram.com" className="inline-flex items-center gap-2 hover:text-zinc-100"><Instagram className="h-4 w-4" />Social</Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

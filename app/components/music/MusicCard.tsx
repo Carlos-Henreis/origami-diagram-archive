@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Download, Music2, Timer } from "lucide-react";
+import { AudioPlayer } from "./AudioPlayer";
 
 export type MusicTrack = {
   title: string;
@@ -68,10 +69,7 @@ export function MusicCard({ track }: MusicCardProps) {
           </div>
         </div>
 
-        <audio controls className="w-full rounded-lg">
-          <source src={track.audioMp3} type="audio/mpeg" />
-          Your browser does not support the audio element.
-        </audio>
+        <AudioPlayer src={track.audioMp3} />
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <Link
