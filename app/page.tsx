@@ -44,7 +44,9 @@ export default async function HomePage() {
   const diagrams = await getDiagramSummaries();
 
   return (
-    <main className="bg-zinc-950 text-zinc-100 min-h-screen">
+    <div className="relative isolate min-h-screen text-zinc-100">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(251,191,36,0.1),transparent_35%),radial-gradient(circle_at_76%_18%,rgba(20,184,166,0.1),transparent_30%)]" />
+      <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:54px_54px]" />
       <section className="max-w-6xl mx-auto px-6 pt-24 pb-16">
         <h2 className="text-5xl md:text-6xl font-semibold tracking-tight">
           Classic Origami Remakes
@@ -94,6 +96,6 @@ export default async function HomePage() {
           ]}
         />
       </section>
-    </main>
+    </div>
   );
 }
