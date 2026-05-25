@@ -1,5 +1,5 @@
 import "./globals.css";
-import Link from "next/link";
+import { HeaderNav } from "./components/HeaderNav";
 
 export const metadata = {
   title: "Origami Diagram Archive",
@@ -19,26 +19,7 @@ export default function RootLayout({
           <header className="border-b border-zinc-800">
             <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <h1 className="text-2xl font-semibold">Origami Diagram Archive</h1>
-              <nav className="flex items-center gap-2">
-                <Link
-                  href="/"
-                  className="rounded-full px-4 py-2 text-sm text-zinc-300 hover:bg-zinc-900 hover:text-white transition"
-                >
-                  Diagrams
-                </Link>
-                <Link
-                  href="/gallery"
-                  className="rounded-full px-4 py-2 text-sm text-zinc-300 hover:bg-zinc-900 hover:text-white transition"
-                >
-                  Gallery
-                </Link>
-                <Link
-                  href="/origami-symbols"
-                  className="rounded-full px-4 py-2 text-sm text-zinc-300 hover:bg-zinc-900 hover:text-white transition"
-                >
-                  Origami Symbols
-                </Link>
-              </nav>
+<HeaderNav />
             </div>
           </header>
 

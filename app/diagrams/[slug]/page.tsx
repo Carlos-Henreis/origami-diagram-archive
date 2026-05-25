@@ -7,7 +7,7 @@ import { Metadata } from "next";
 import Accordion from "../../components/Accordion";
 import Link from 'next/link';
 // Se estiver usando lucide-react (comum em projetos shadcn/tailwind)
-import { ArrowLeft, BookOpen, Download } from "lucide-react";
+import { ArrowLeft, BookOpen } from "lucide-react";
 
 const reader = createReader(process.cwd(), keystaticConfig);
 const BASE_URL = "https://origami.cahenre.com.br";
@@ -78,7 +78,9 @@ export default async function DiagramPage({
   const content = Markdoc.transform(node);
 
   return (
-    <main className="max-w-3xl mx-auto px-6 py-16 text-zinc-200">
+    <div className="relative isolate min-h-screen text-zinc-200">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(251,191,36,0.09),transparent_38%)]" />
+      <main className="relative max-w-3xl mx-auto px-6 py-16">
       {/* Container centralizado igual ao seu conteúdo */}
       <div className="max-w-3xl mx-auto">
         
@@ -170,6 +172,7 @@ export default async function DiagramPage({
 
 
     </main>
+    </div>
   );
 }
 
