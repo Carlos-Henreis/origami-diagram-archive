@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Download, Music2, Timer } from "lucide-react";
 import { AudioPlayer } from "./AudioPlayer";
 
@@ -58,20 +57,20 @@ export function MusicCard({ track }: MusicCardProps) {
         <AudioPlayer src={track.audioMp3} />
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-          <Link
+          <a
             href={track.audioMp3}
             download
             className="inline-flex items-center justify-center gap-2 rounded-xl border border-amber-300/40 bg-amber-300/10 px-4 py-2.5 text-sm font-medium text-amber-100 transition hover:border-amber-200/80 hover:bg-amber-200/20"
           >
             <Download className="h-4 w-4" /> Download MP3
-          </Link>
-          <Link
+          </a>
+          <a
             href={track.midi}
             download
             className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-4 py-2.5 text-sm font-medium text-zinc-100 transition hover:border-white/50 hover:bg-white/10"
           >
             <Download className="h-4 w-4" /> Download MIDI
-          </Link>
+          </a>
         </div>
       </div>
     </article>
