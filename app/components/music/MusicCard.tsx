@@ -33,24 +33,10 @@ export function MusicCard({ track }: MusicCardProps) {
       <div className="pointer-events-none absolute -bottom-10 -left-8 h-24 w-24 rounded-full border border-white/10" />
 
       <div className="relative space-y-5">
-        <div className="relative overflow-hidden rounded-xl border border-white/10 bg-black/50">
-          <Image src={track.coverImage} alt={`${track.title} cover art`} width={640} height={360} className="h-44 w-full object-cover opacity-0" />
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-950 to-black" />
-            <svg viewBox="0 0 800 450" className="absolute inset-0 h-full w-full">
-              <defs>
-                <linearGradient id={`${track.slug}-gradient`} x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="rgba(255,255,255,0.25)" />
-                  <stop offset="100%" stopColor="rgba(255,255,255,0.02)" />
-                </linearGradient>
-              </defs>
-              <path d="M0,335 C130,255 265,390 410,305 C515,242 645,258 800,212" stroke={`url(#${track.slug}-gradient)`} strokeWidth="2" fill="none" opacity="0.75" />
-              <path d="M0,375 C170,320 250,390 420,340 C530,300 670,340 800,290" stroke="rgba(255,255,255,0.18)" strokeWidth="1" fill="none" />
-              <path d="M130 80 L280 70 L355 170 L180 200 Z" stroke="rgba(255,255,255,0.22)" strokeWidth="1.2" fill="none" />
-              <path d="M360 120 L500 90 L610 180 L470 230 Z" stroke="rgba(255,255,255,0.22)" strokeWidth="1.2" fill="none" />
-            </svg>
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
+        <div className="relative overflow-hidden rounded-xl">
+          <Image src={track.coverImage} alt={`${track.title} cover art`} width={400} height={400} className="h-44 w-full object-cover opacity-70" />
+         
+          <div className="absolute inset-0" />
           <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-black/40 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.24em] text-zinc-200">
             {track.category}
           </span>

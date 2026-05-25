@@ -4,6 +4,7 @@ import { Music4, Sparkles } from "lucide-react";
 import { MusicCard, type MusicTrack } from "../components/music/MusicCard";
 import { SectionTitle } from "../components/music/SectionTitle";
 import { AttributionCopyButton } from "../components/music/AttributionCopyButton";
+import Image from "next/image";
 
 const tracks: MusicTrack[] = [
   {
@@ -12,9 +13,9 @@ const tracks: MusicTrack[] = [
     category: "Ambient",
     description:
       "Relaxing ambient loop with soft pads and gentle textures. Perfect for calm tutorials and focus.",
-    duration: "03:24",
-    bpm: "76",
-    coverImage: "/images/music/origami-ambient-loop.webp",
+    duration: "00:15",
+    bpm: "72",
+    coverImage: "/images/music/origami-audio-archive.webp",
     audioMp3: "/audio/origami-ambient-loop.mp3",
     midi: "/audio/origami-ambient-loop.mid",
   },
@@ -24,9 +25,9 @@ const tracks: MusicTrack[] = [
     category: "Theme",
     description:
       "The official theme of the Origami Diagram Archive. Clean, modern, and inspiring.",
-    duration: "02:58",
-    bpm: "92",
-    coverImage: "/images/music/origami-diagram-archive-theme.webp",
+    duration: "00:07",
+    bpm: "80",
+    coverImage: "/images/music/origami-audio-archive.webp",
     audioMp3: "/audio/origami-diagram-archive-theme.mp3",
     midi: "/audio/origami-diagram-archive-theme.mid",
   },
@@ -36,9 +37,9 @@ const tracks: MusicTrack[] = [
     category: "Fusion",
     description:
       "Upbeat fusion loop with Japanese jazz influences. Ideal for energetic and creative sessions.",
-    duration: "03:11",
-    bpm: "108",
-    coverImage: "/images/music/origami-fusion-loop.webp",
+    duration: "00:43",
+    bpm: "72",
+    coverImage: "/images/music/origami-audio-archive.webp",
     audioMp3: "/audio/origami-fusion-loop.mp3",
     midi: "/audio/origami-fusion-loop.mid",
   },
@@ -94,18 +95,8 @@ export default function MusicPage() {
           <p className="text-sm text-amber-100/85">Free to use with attribution.</p>
         </div>
 
-        <div className="relative mx-auto h-72 w-full max-w-md rounded-3xl border border-white/10 bg-zinc-950/70 p-8 backdrop-blur-xl lg:h-80">
-          <div className="absolute -left-4 -top-4 h-14 w-14 rounded-full border border-amber-200/30 bg-amber-100/10 blur-[1px]" />
-          <svg viewBox="0 0 360 320" className="h-full w-full text-white/80">
-            <g fill="none" stroke="currentColor" strokeWidth="1">
-              <path d="M40 210 L125 70 L210 150 L125 250 Z" />
-              <path d="M125 70 L270 90 L210 150" />
-              <path d="M125 250 L270 225 L210 150" />
-              <path d="M60 220 L300 210" className="opacity-45" />
-              <path d="M86 180 L270 90" className="opacity-45" />
-              <circle cx="210" cy="150" r="3" fill="rgba(251,191,36,0.85)" stroke="none" />
-            </g>
-          </svg>
+        <div className="relative mx-auto h-72 w-full max-w-md rounded-3xl h-full w-full text-white/80">
+          <Image src="/images/music/origami-audio-archive.webp" alt="Origami Audio Archive cover art" className="object-cover" width={300} height={300} />
         </div>
       </section>
 

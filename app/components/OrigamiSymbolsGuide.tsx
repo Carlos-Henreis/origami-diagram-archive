@@ -243,7 +243,7 @@ export default function OrigamiSymbolsGuide() {
 
   return (
     <div>
-      <div className="sticky top-0 z-20 border-y border-zinc-800 bg-zinc-950/90 py-5 backdrop-blur">
+      <div className="sticky top-0 z-20 py-5 backdrop-blur">
         <div className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-center">
           <label className="relative block">
             <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-zinc-500" />
