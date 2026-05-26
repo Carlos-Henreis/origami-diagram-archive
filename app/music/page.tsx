@@ -15,7 +15,7 @@ const tracks: MusicTrack[] = [
       "Relaxing ambient loop with soft pads and gentle textures. Perfect for calm tutorials and focus.",
     duration: "00:15",
     bpm: "72",
-    coverImage: "/images/music/origami-audio-archive.webp",
+    coverImage: "/images/music/origami-audio-archive-cover.png",
     audioMp3: "/audio/origami-ambient-loop.mp3",
     midi: "/audio/origami-ambient-loop.mid",
   },
@@ -27,7 +27,7 @@ const tracks: MusicTrack[] = [
       "The official theme of the Origami Diagram Archive. Clean, modern, and inspiring.",
     duration: "00:07",
     bpm: "80",
-    coverImage: "/images/music/origami-audio-archive.webp",
+    coverImage: "/images/music/origami-audio-archive-cover.png",
     audioMp3: "/audio/origami-diagram-archive-theme.mp3",
     midi: "/audio/origami-diagram-archive-theme.mid",
   },
@@ -39,7 +39,7 @@ const tracks: MusicTrack[] = [
       "Upbeat fusion loop with Japanese jazz influences. Ideal for energetic and creative sessions.",
     duration: "00:43",
     bpm: "72",
-    coverImage: "/images/music/origami-audio-archive.webp",
+    coverImage: "/images/music/origami-audio-archive-cover.png",
     audioMp3: "/audio/origami-fusion-loop.mp3",
     midi: "/audio/origami-fusion-loop.mid",
   },
@@ -96,7 +96,7 @@ export default function MusicPage() {
         </div>
 
         <div className="relative mx-auto h-72 w-full max-w-md rounded-3xl h-full w-full text-white/80">
-          <Image src="/images/music/origami-audio-archive.webp" alt="Origami Audio Archive cover art" className="object-cover" width={300} height={300} />
+          <Image src="/images/music/origami-audio-archive-cover.png" alt="Origami Audio Archive cover art" className="object-cover" width={300} height={300} />
         </div>
       </section>
 
