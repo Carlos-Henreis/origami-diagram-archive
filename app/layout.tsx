@@ -10,7 +10,15 @@ export const metadata = {
 const themeInitScript = `
   (() => {
     const storedTheme = window.localStorage.getItem("origami-diagram-archive-theme");
-    document.documentElement.dataset.theme = storedTheme === "light" ? "light" : "dark";
+    const preference = ["light", "dark", "system"].includes(storedTheme)
+      ? storedTheme
+      : "dark";
+    const resolvedTheme = preference === "system"
+      ? (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark")
+      : preference;
+
+    document.documentElement.dataset.theme = resolvedTheme;
+    document.documentElement.dataset.themePreference = preference;
   })();
 `;
 
@@ -21,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="dark" suppressHydrationWarning>
-      <body className="bg-zinc-950 text-zinc-100 antialiased">
+      <body className="bg-background text-foreground antialiased">
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <div className="flex min-h-screen flex-col">
           <header className="border-b border-zinc-800 bg-zinc-950/90 backdrop-blur">
