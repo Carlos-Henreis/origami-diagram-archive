@@ -7,11 +7,7 @@ import { Metadata } from "next";
 /* METADATA */
 /* ============================= */
 const BASE_URL = "https://origami.cahenre.com.br";
-export async function generateMetadata({
-}: {
-}): Promise<Metadata> {
-
-
+export async function generateMetadata(): Promise<Metadata> {
   const url = `${BASE_URL}`;
 
   return {

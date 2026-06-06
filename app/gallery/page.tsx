@@ -9,11 +9,7 @@ const BASE_URL = "https://origami.cahenre.com.br";
 /* METADATA */
 /* ============================= */
 
-export async function generateMetadata({
-}: {
-}): Promise<Metadata> {
-
-
+export async function generateMetadata(): Promise<Metadata> {
   const url = `${BASE_URL}/gallery`;
 
   return {

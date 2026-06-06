@@ -3,7 +3,7 @@ import OrigamiSymbolsGuide from "../components/OrigamiSymbolsGuide";
 
 const BASE_URL = "https://origami.cahenre.com.br";
 
-export async function generateMetadata({}: {}): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const url = `${BASE_URL}/symbols`;
   const title = "Origami Symbols Legend | Folding Notation Guide";
   const description =
