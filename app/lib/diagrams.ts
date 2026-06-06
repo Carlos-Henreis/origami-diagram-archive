@@ -70,7 +70,6 @@ export async function getDiagramSummaries(): Promise<DiagramSummary[]> {
       const images = Array.from(
         new Set([...descriptionImages, entry.coverImage].filter(Boolean))
       ) as string[];
-      console.log(entry.updatedAt)
       return {
         slug,
         title: entry.title,
