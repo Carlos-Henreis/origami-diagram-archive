@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, Moon, Sun, X } from "lucide-react";
+import { Check, ChevronDown, Menu, Monitor, Moon, Settings, Sun, X } from "lucide-react";
 import { useState } from "react";
 
 const links = [
@@ -11,15 +11,87 @@ const links = [
   { href: "/music", label: "Music" },
 ];
 
-type Theme = "dark" | "light";
+type ThemePreference = "dark" | "light" | "system";
+type ResolvedTheme = "dark" | "light";
 
 const THEME_STORAGE_KEY = "origami-diagram-archive-theme";
+
+const themeOptions: Array<{
+  value: ThemePreference;
+  label: string;
+  description: string;
+  icon: React.ComponentType<{ className?: string }>;
+}> = [
+  {
+    value: "dark",
+    label: "Dark",
+    description: "Default high-contrast archive theme.",
+    icon: Moon,
+  },
+  {
+    value: "light",
+    label: "Light",
+    description: "Warmer paper-toned reading theme.",
+    icon: Sun,
+  },
+  {
+    value: "system",
+    label: "System",
+    description: "Follow this device when requested.",
+    icon: Monitor,
+  },
+];
+
+function getStoredPreference(): ThemePreference {
+  if (typeof window === "undefined") return "dark";
+
+  const storedPreference = window.localStorage.getItem(THEME_STORAGE_KEY);
+
+  if (
+    storedPreference === "light" ||
+    storedPreference === "dark" ||
+    storedPreference === "system"
+  ) {
+    return storedPreference;
+  }
+
+  return "dark";
+}
+
+function resolveTheme(preference: ThemePreference): ResolvedTheme {
+  if (preference !== "system") return preference;
+
+  return window.matchMedia("(prefers-color-scheme: light)").matches
+    ? "light"
+    : "dark";
+}
+
+function applyTheme(preference: ThemePreference) {
+  const resolvedTheme = resolveTheme(preference);
+
+  document.documentElement.dataset.theme = resolvedTheme;
+  document.documentElement.dataset.themePreference = preference;
+  window.localStorage.setItem(THEME_STORAGE_KEY, preference);
+}
 
 export function HeaderNav() {
   const [open, setOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [themePreference, setThemePreference] =
     useState<ThemePreference>(getStoredPreference);
+<<<<<<< HEAD
+
+  const openSettings = () => {
+    setThemePreference(getStoredPreference());
+    setSettingsOpen((prev) => !prev);
+  };
+
+  const selectTheme = (preference: ThemePreference) => {
+    applyTheme(preference);
+    setThemePreference(preference);
+  };
+=======
+>>>>>>> a6b9b37 (Replace theme toggle with settings menu)
 
   const openSettings = () => {
     setThemePreference(getStoredPreference());
@@ -31,27 +103,19 @@ export function HeaderNav() {
     setThemePreference(preference);
   };
 
-  const toggleTheme = () => {
-    const currentTheme =
-      document.documentElement.dataset.theme === "light" ? "light" : "dark";
-    const nextTheme: Theme = currentTheme === "dark" ? "light" : "dark";
-
-    document.documentElement.dataset.theme = nextTheme;
-    window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
-  };
-
   return (
-    <div className="flex w-full flex-col gap-3 md:w-auto md:flex-row md:items-center">
+    <div className="relative flex w-full flex-col gap-3 md:w-auto md:flex-row md:items-center">
       <div className="flex items-center gap-3 md:order-2">
         <button
           type="button"
           className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-700 text-zinc-300 transition hover:bg-zinc-900 hover:text-white"
-          onClick={toggleTheme}
-          aria-label="Toggle color theme"
-          title="Toggle color theme"
+          onClick={openSettings}
+          aria-expanded={settingsOpen}
+          aria-controls="site-settings"
+          aria-label="Open settings"
+          title="Settings"
         >
-          <Sun className="theme-icon-sun h-4 w-4" />
-          <Moon className="theme-icon-moon h-4 w-4" />
+          <Settings className="h-4 w-4" />
         </button>
 
         <button
@@ -84,16 +148,28 @@ export function HeaderNav() {
       {settingsOpen && (
         <div
           id="site-settings"
+<<<<<<< HEAD
           className="absolute right-0 top-12 z-[110] w-[min(20rem,calc(100vw-3rem))] overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl shadow-black/40"
         >
           <div className="flex items-center justify-between border-b border-zinc-800 px-5 py-4">
             <div>
               <p className="text-base font-semibold text-zinc-100">Settings</p>
+=======
+          className="absolute right-0 top-12 z-50 w-[min(20rem,calc(100vw-3rem))] overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl shadow-black/40"
+        >
+          <div className="flex items-center justify-between border-b border-zinc-800 px-5 py-4">
+            <div>
+              <p className="text-base font-semibold text-white">Settings</p>
+>>>>>>> a6b9b37 (Replace theme toggle with settings menu)
               <p className="text-xs text-zinc-400">Customize the archive.</p>
             </div>
             <button
               type="button"
+<<<<<<< HEAD
               className="rounded-full p-2 text-zinc-400 transition hover:bg-zinc-800 hover:text-zinc-100"
+=======
+              className="rounded-full p-2 text-zinc-400 transition hover:bg-zinc-800 hover:text-white"
+>>>>>>> a6b9b37 (Replace theme toggle with settings menu)
               onClick={() => setSettingsOpen(false)}
               aria-label="Close settings"
             >
@@ -126,7 +202,11 @@ export function HeaderNav() {
                     aria-checked={selected}
                     className={`flex w-full items-start gap-3 rounded-xl border px-3 py-3 text-left transition ${
                       selected
+<<<<<<< HEAD
                         ? "border-amber-300/60 bg-amber-300/10 text-zinc-100"
+=======
+                        ? "border-amber-300/60 bg-amber-300/10 text-white"
+>>>>>>> a6b9b37 (Replace theme toggle with settings menu)
                         : "border-transparent text-zinc-300 hover:border-zinc-700 hover:bg-zinc-800/80"
                     }`}
                     onClick={() => selectTheme(option.value)}

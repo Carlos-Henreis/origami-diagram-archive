@@ -40,9 +40,18 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html,
+body {
+  background: var(--background) !important;
+}
+
 body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  background: var(--background);
 }
 
 ::selection {
@@ -143,11 +152,17 @@ body {
   --tw-prose-td-borders: #d6c7b2;
 }
 
-.theme-icon-moon,
-[data-theme="light"] .theme-icon-sun {
-  display: none;
+/* Dark-theme hardening for pages/components that rely on Tailwind utility colors. */
+[data-theme="dark"] .min-h-screen {
+  background-color: var(--background);
 }
 
-[data-theme="light"] .theme-icon-moon {
-  display: block;
+[data-theme="dark"] .bg-background,
+[data-theme="dark"] .bg-zinc-950,
+[data-theme="dark"] .bg-zinc-950\/90 {
+  background-color: var(--background) !important;
+}
+
+[data-theme="dark"] .text-foreground {
+  color: var(--foreground) !important;
 }
