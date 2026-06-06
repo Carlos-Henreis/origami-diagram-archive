@@ -135,7 +135,7 @@ export function HeaderNav() {
       {settingsOpen && (
         <div
           id="site-settings"
-          className="absolute right-0 top-12 z-50 w-[min(20rem,calc(100vw-3rem))] overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl shadow-black/40"
+          className="absolute right-0 top-12 z-[110] w-[min(20rem,calc(100vw-3rem))] overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl shadow-black/40"
         >
           <div className="flex items-center justify-between border-b border-zinc-800 px-5 py-4">
             <div>
