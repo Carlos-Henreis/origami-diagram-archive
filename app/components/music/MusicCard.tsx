@@ -36,7 +36,7 @@ export function MusicCard({ track }: MusicCardProps) {
           <Image src={track.coverImage} alt={`${track.title} cover art`} width={400} height={400} className="h-44 w-full object-cover opacity-70" />
          
           <div className="absolute inset-0" />
-          <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-black/40 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.24em] text-zinc-200">
+          <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-black/40 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.24em] [color:rgba(255,255,255,0.86)]">
             {track.category}
           </span>
         </div>

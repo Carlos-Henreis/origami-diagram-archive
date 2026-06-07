@@ -118,10 +118,10 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
                 loading={index < 3 ? "eager" : "lazy"}
               />
             </div>
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-100 transition" />
+            <div className="theme-card-overlay pointer-events-none absolute inset-0 opacity-100 transition" />
             <div className="absolute bottom-0 left-0 p-4">
-              <p className="text-sm text-zinc-300">{item.images.length} images</p>
-              <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+              <p className="text-sm [color:rgba(255,255,255,0.78)]">{item.images.length} images</p>
+              <h3 className="text-lg font-semibold [color:white]">{item.title}</h3>
             </div>
           </button>
         ))}
@@ -129,7 +129,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
 
       {openItem && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-2 md:p-4"
+          className="theme-modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-2 md:p-4"
           onClick={closeModal}
         >
           <div
@@ -137,7 +137,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
             onClick={(event) => event.stopPropagation()}
           >
             <div className="mb-4 flex items-center justify-between gap-3">
-              <h4 className="text-lg font-semibold text-white">{openItem.title}</h4>
+              <h4 className="text-lg font-semibold text-zinc-100">{openItem.title}</h4>
               <button
                 type="button"
                 aria-label="Fechar modal"
@@ -178,7 +178,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
                   <button
                     type="button"
                     aria-label="Imagem anterior"
-                    className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/65 p-3 text-white shadow-lg hover:bg-black/80"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/65 p-3 [color:white] shadow-lg hover:bg-black/80"
                     onClick={goPrevious}
                   >
                     <ChevronLeft size={22} />
@@ -187,7 +187,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
                   <button
                     type="button"
                     aria-label="Próxima imagem"
-                    className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/65 p-3 text-white shadow-lg hover:bg-black/80"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/65 p-3 [color:white] shadow-lg hover:bg-black/80"
                     onClick={goNext}
                   >
                     <ChevronRight size={22} />
@@ -201,7 +201,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
                     <span
                       key={image + index}
                       className={`h-2.5 w-2.5 rounded-full ${
-                        index === currentImageIndex ? "bg-white" : "bg-white/40"
+                        index === currentImageIndex ? "bg-[white]" : "bg-white/40"
                       }`}
                     />
                   ))}
