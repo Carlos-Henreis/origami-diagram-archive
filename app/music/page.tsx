@@ -79,9 +79,9 @@ export function generateMetadata(): Metadata {
 
 export default function MusicPage() {
   return (
-    <div className="relative isolate overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(251,191,36,0.12),transparent_38%),radial-gradient(circle_at_72%_16%,rgba(20,184,166,0.12),transparent_34%)]" />
-      <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:54px_54px]" />
+    <div className="relative isolate overflow-hidden text-zinc-100">
+      <div className="theme-hero-wash pointer-events-none absolute inset-0" />
+      <div className="theme-grid pointer-events-none absolute inset-0" />
 
       <section className="relative mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-14 pt-16 md:pt-24 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl space-y-6">
@@ -100,7 +100,7 @@ export default function MusicPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-8">
+      <section className="relative mx-auto max-w-6xl px-6 py-8">
         <SectionTitle
           eyebrow="Collection"
           title="Royalty-free tracks for creators"
@@ -113,7 +113,7 @@ export default function MusicPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="relative mx-auto max-w-6xl px-6 py-16">
         <SectionTitle eyebrow="License" title="Simple attribution license" />
         <div className="rounded-2xl border border-amber-100/20 bg-zinc-900/60 p-6 backdrop-blur-md">
           <p className="mb-5 flex items-center gap-2 text-zinc-200"><Music4 className="h-4 w-4 text-amber-200" />All tracks are free to use in videos, tutorials, streams, and creative projects with attribution.</p>
@@ -125,7 +125,7 @@ export default function MusicPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 pb-16">
+      <section className="relative mx-auto max-w-6xl px-6 pb-16">
         <SectionTitle eyebrow="Explore" title="Continue exploring the archive" />
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <Link href="/diagrams" className="rounded-2xl border border-white/10 bg-zinc-900/70 p-6 transition hover:border-amber-200/30 hover:bg-zinc-800/80">

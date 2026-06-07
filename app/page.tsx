@@ -41,9 +41,9 @@ export default async function HomePage() {
 
   return (
     <div className="relative isolate min-h-screen text-zinc-100">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(251,191,36,0.1),transparent_35%),radial-gradient(circle_at_76%_18%,rgba(20,184,166,0.1),transparent_30%)]" />
-      <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:54px_54px]" />
-      <section className="max-w-6xl mx-auto px-6 pt-24 pb-16">
+      <div className="theme-hero-wash pointer-events-none absolute inset-0" />
+      <div className="theme-grid pointer-events-none absolute inset-0" />
+      <section className="relative max-w-6xl mx-auto px-6 pt-24 pb-16">
         <h2 className="text-5xl md:text-6xl font-semibold tracking-tight">
           Classic Origami Remakes
         </h2>
@@ -54,11 +54,11 @@ export default async function HomePage() {
         </p>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 pb-24">
+      <section className="relative max-w-6xl mx-auto px-6 pb-24">
         <DiagramSearch diagrams={diagrams} />
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 pb-16">
+      <section className="relative max-w-6xl mx-auto px-6 pb-16">
         <h3 className="text-5xl md:text-6xl font-semibold tracking-tight pb-6">
           About This project
         </h3>

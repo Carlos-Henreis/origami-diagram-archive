@@ -38,9 +38,9 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function OrigamiSymbolsPage() {
   return (
     <div className="relative isolate min-h-screen text-zinc-100">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(251,191,36,0.1),transparent_35%),radial-gradient(circle_at_76%_18%,rgba(99,102,241,0.08),transparent_30%)]" />
-      <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:54px_54px]" />
-      <section className="mx-auto max-w-6xl px-6 pb-12 pt-24">
+      <div className="theme-hero-wash pointer-events-none absolute inset-0" />
+      <div className="theme-grid pointer-events-none absolute inset-0" />
+      <section className="relative mx-auto max-w-6xl px-6 pb-12 pt-24">
         <h1 className="text-5xl font-semibold tracking-tight md:text-6xl">
           Origami Symbols Legend
         </h1>
@@ -60,10 +60,10 @@ export default async function OrigamiSymbolsPage() {
           </a>
         </div>
       </section>
-      <section className="mx-auto max-w-6xl px-6 pb-24">
+      <section className="relative mx-auto max-w-6xl px-6 pb-24">
         <OrigamiSymbolsGuide />
       </section>
-      <section className="mx-auto max-w-6xl px-6 pb-24">
+      <section className="relative mx-auto max-w-6xl px-6 pb-24">
         <div className="mb-10">
           <a
             href="/pdfs/origami-symbols-legend.pdf"

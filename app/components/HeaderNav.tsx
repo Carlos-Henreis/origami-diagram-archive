@@ -95,7 +95,7 @@ export function HeaderNav() {
       <div className="flex items-center gap-3 md:order-2">
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-700 text-zinc-300 transition hover:bg-zinc-900 hover:text-white"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-700 text-zinc-300 transition hover:bg-zinc-900 hover:text-zinc-100"
           onClick={openSettings}
           aria-expanded={settingsOpen}
           aria-controls="site-settings"
@@ -124,7 +124,7 @@ export function HeaderNav() {
           <Link
             key={link.href}
             href={link.href}
-            className="rounded-full px-4 py-2 text-sm text-zinc-300 transition hover:bg-zinc-900 hover:text-white"
+            className="rounded-full px-4 py-2 text-sm text-zinc-300 transition hover:bg-zinc-900 hover:text-zinc-100"
             onClick={() => setOpen(false)}
           >
             {link.label}
@@ -139,12 +139,12 @@ export function HeaderNav() {
         >
           <div className="flex items-center justify-between border-b border-zinc-800 px-5 py-4">
             <div>
-              <p className="text-base font-semibold text-white">Settings</p>
+              <p className="text-base font-semibold text-zinc-100">Settings</p>
               <p className="text-xs text-zinc-400">Customize the archive.</p>
             </div>
             <button
               type="button"
-              className="rounded-full p-2 text-zinc-400 transition hover:bg-zinc-800 hover:text-white"
+              className="rounded-full p-2 text-zinc-400 transition hover:bg-zinc-800 hover:text-zinc-100"
               onClick={() => setSettingsOpen(false)}
               aria-label="Close settings"
             >
@@ -177,7 +177,7 @@ export function HeaderNav() {
                     aria-checked={selected}
                     className={`flex w-full items-start gap-3 rounded-xl border px-3 py-3 text-left transition ${
                       selected
-                        ? "border-amber-300/60 bg-amber-300/10 text-white"
+                        ? "border-amber-300/60 bg-amber-300/10 text-zinc-100"
                         : "border-transparent text-zinc-300 hover:border-zinc-700 hover:bg-zinc-800/80"
                     }`}
                     onClick={() => selectTheme(option.value)}

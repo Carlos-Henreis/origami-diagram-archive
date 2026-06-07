@@ -79,7 +79,8 @@ export default async function DiagramPage({
 
   return (
     <div className="relative isolate min-h-screen text-zinc-200">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(251,191,36,0.09),transparent_38%)]" />
+      <div className="theme-hero-wash pointer-events-none absolute inset-0" />
+      <div className="theme-grid pointer-events-none absolute inset-0" />
       <main className="relative max-w-3xl mx-auto px-6 py-16">
       {/* Container centralizado igual ao seu conteúdo */}
       <div className="max-w-3xl mx-auto">
@@ -87,7 +88,7 @@ export default async function DiagramPage({
         {/* Botão Voltar */}
         <Link 
           href="/" 
-          className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors mb-8 group"
+          className="inline-flex items-center gap-2 text-zinc-400 hover:text-zinc-100 transition-colors mb-8 group"
         >
           <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
           Back to Archive
@@ -114,7 +115,7 @@ export default async function DiagramPage({
       <div className="my-10 rounded-2xl border border-white/10 bg-zinc-900/70 p-5">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h2 className="text-lg font-semibold text-white">
+            <h2 className="text-lg font-semibold text-zinc-100">
               New to origami diagrams?
             </h2>
             <p className="mt-1 text-sm leading-6 text-zinc-400">

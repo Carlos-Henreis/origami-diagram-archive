@@ -42,7 +42,7 @@ export default function DiagramSearch({ diagrams }: { diagrams: DiagramSummary[]
         <input
           type="text"
           placeholder="Search diagrams (e.g., tsuru, star, box)..."
-          className="w-full bg-zinc-900 border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-white/20 transition-all"
+          className="w-full bg-zinc-900 border border-zinc-800 text-zinc-100 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-white/20 transition-all"
           onChange={(e) => setQuery(e.target.value)}
         />
       </div>
@@ -85,7 +85,7 @@ export default function DiagramSearch({ diagrams }: { diagrams: DiagramSummary[]
               )}
 
               <div className="p-6">
-                <h3 className="text-xl font-medium group-hover:text-white transition">
+                <h3 className="text-xl font-medium group-hover:text-zinc-100 transition">
                   {entry.title}
                 </h3>
 
