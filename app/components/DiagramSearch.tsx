@@ -22,7 +22,6 @@ export default function DiagramSearch({ diagrams }: { diagrams: DiagramSummary[]
     );
 
     result.sort((a, b) => {
-      console.log("Sorting by", sortBy, a.title, b.title);
       if (sortBy === "alphabetical") {
         return a.title.localeCompare(b.title, "pt-BR");
       }
