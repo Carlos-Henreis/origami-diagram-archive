@@ -105,7 +105,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
           <button
             type="button"
             key={item.slug}
-            className="group relative rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 text-left"
+            className="theme-card theme-card-interactive group relative overflow-hidden rounded-2xl border text-left"
             onClick={() => openModal(index)}
           >
             <div className="aspect-[4/3] overflow-hidden">
@@ -118,10 +118,10 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
                 loading={index < 3 ? "eager" : "lazy"}
               />
             </div>
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-100 transition" />
+            <div className="theme-card-overlay pointer-events-none absolute inset-0 opacity-100 transition" />
             <div className="absolute bottom-0 left-0 p-4">
-              <p className="text-sm text-zinc-300">{item.images.length} images</p>
-              <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+              <p className="theme-image-caption-muted text-sm">{item.images.length} images</p>
+              <h3 className="theme-image-caption text-lg font-semibold">{item.title}</h3>
             </div>
           </button>
         ))}
@@ -129,19 +129,19 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
 
       {openItem && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-2 md:p-4"
+          className="theme-modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-2 md:p-4"
           onClick={closeModal}
         >
           <div
-            className="w-full max-w-5xl rounded-2xl border border-zinc-700 bg-zinc-950 p-4 md:p-6"
+            className="theme-modal-panel w-full max-w-5xl rounded-2xl border p-4 md:p-6"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="mb-4 flex items-center justify-between gap-3">
-              <h4 className="text-lg font-semibold text-white">{openItem.title}</h4>
+              <h4 className="text-lg font-semibold text-zinc-100">{openItem.title}</h4>
               <button
                 type="button"
                 aria-label="Fechar modal"
-                className="rounded-full bg-zinc-800 p-2 text-zinc-200 hover:bg-zinc-700"
+                className="theme-secondary-action rounded-full p-2"
                 onClick={closeModal}
               >
                 <X size={18} />
@@ -149,7 +149,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
             </div>
 
             <div
-              className="relative overflow-hidden rounded-xl bg-zinc-900"
+              className="theme-surface relative overflow-hidden rounded-xl"
               onTouchStart={(event) => setTouchStartX(event.changedTouches[0].clientX)}
               onTouchEnd={(event) => {
                 if (touchStartX === null) return;
@@ -178,7 +178,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
                   <button
                     type="button"
                     aria-label="Imagem anterior"
-                    className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/65 p-3 text-white shadow-lg hover:bg-black/80"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/65 p-3 [color:white] shadow-lg hover:bg-black/80"
                     onClick={goPrevious}
                   >
                     <ChevronLeft size={22} />
@@ -187,7 +187,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
                   <button
                     type="button"
                     aria-label="Próxima imagem"
-                    className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/65 p-3 text-white shadow-lg hover:bg-black/80"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/65 p-3 [color:white] shadow-lg hover:bg-black/80"
                     onClick={goNext}
                   >
                     <ChevronRight size={22} />
@@ -201,7 +201,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
                     <span
                       key={image + index}
                       className={`h-2.5 w-2.5 rounded-full ${
-                        index === currentImageIndex ? "bg-white" : "bg-white/40"
+                        index === currentImageIndex ? "bg-[white]" : "bg-white/40"
                       }`}
                     />
                   ))}
@@ -218,7 +218,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
                 <button
                   type="button"
                   onClick={handleShare}
-                  className="inline-flex items-center gap-2 rounded-md bg-zinc-800 px-4 py-2 text-sm font-medium text-zinc-100 hover:bg-zinc-700"
+                  className="theme-secondary-action inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium"
                 >
                   <Share2 size={16} />
                   Share
@@ -226,7 +226,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
 
                 <Link
                   href={`/diagrams/${openItem.slug}`}
-                  className="rounded-md bg-white px-4 py-2 text-sm font-medium text-zinc-950 hover:bg-zinc-200"
+                  className="theme-primary-action rounded-md px-4 py-2 text-sm font-medium"
                 >
                   Open Diagram Page
                 </Link>

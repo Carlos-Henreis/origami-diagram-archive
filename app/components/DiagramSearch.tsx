@@ -42,7 +42,7 @@ export default function DiagramSearch({ diagrams }: { diagrams: DiagramSummary[]
         <input
           type="text"
           placeholder="Search diagrams (e.g., tsuru, star, box)..."
-          className="w-full bg-zinc-900 border border-zinc-800 text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-white/20 transition-all"
+          className="theme-input w-full rounded-xl border px-4 py-3 transition-all focus:outline-none"
           onChange={(e) => setQuery(e.target.value)}
         />
       </div>
@@ -55,8 +55,8 @@ export default function DiagramSearch({ diagrams }: { diagrams: DiagramSummary[]
             onClick={() => setSortBy(option)}
             className={`rounded-full px-4 py-2 text-sm transition ${
               sortBy === option
-                ? "bg-white text-zinc-900"
-                : "bg-zinc-900 text-zinc-300 hover:bg-zinc-800"
+                ? "theme-chip-active"
+                : "theme-chip"
             }`}
           >
             {sortLabels[option]}
@@ -70,7 +70,7 @@ export default function DiagramSearch({ diagrams }: { diagrams: DiagramSummary[]
             <Link
               key={entry.slug}
               href={`/diagrams/${entry.slug}`}
-              className="group block rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 hover:border-zinc-600 transition"
+              className="theme-card theme-card-interactive group block overflow-hidden rounded-2xl border"
             >
               {entry.coverImage && (
                 <div className="overflow-hidden aspect-[4/3]">
@@ -85,18 +85,18 @@ export default function DiagramSearch({ diagrams }: { diagrams: DiagramSummary[]
               )}
 
               <div className="p-6">
-                <h3 className="text-xl font-medium group-hover:text-white transition">
+                <h3 className="text-xl font-medium group-hover:text-zinc-100 transition">
                   {entry.title}
                 </h3>
 
                 {entry.shortDescription && (
-                  <p className="mt-3 text-sm text-zinc-400 leading-relaxed line-clamp-3">
+                  <p className="theme-copy mt-3 line-clamp-3 text-sm leading-relaxed">
                     {entry.shortDescription}
                   </p>
                 )}
 
                 {entry.originalAuthor && (
-                  <p className="mt-4 text-xs text-zinc-500">
+                  <p className="theme-copy mt-4 text-xs">
                     Original by {entry.originalAuthor}
                   </p>
                 )}
@@ -104,7 +104,7 @@ export default function DiagramSearch({ diagrams }: { diagrams: DiagramSummary[]
             </Link>
           ))
         ) : (
-          <p className="text-zinc-500 col-span-full text-center py-10">
+          <p className="theme-copy col-span-full py-10 text-center">
             No diagrams found for &quot;{query}&quot;
           </p>
         )}
