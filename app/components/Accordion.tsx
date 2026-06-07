@@ -23,7 +23,7 @@ export default function Accordion({ items }: { items: Item[] }) {
         return (
           <div
             key={index}
-            className="border border-zinc-800 rounded-xl overflow-hidden bg-zinc-900"
+            className="theme-card overflow-hidden rounded-xl border"
           >
             <button
               onClick={() => toggle(index)}
@@ -45,7 +45,7 @@ export default function Accordion({ items }: { items: Item[] }) {
                   : "grid-rows-[0fr] opacity-0"
               }`}
             >
-              <div className="overflow-hidden px-6 pb-6 text-zinc-400">
+              <div className="theme-copy overflow-hidden px-6 pb-6">
                 {item.content}
               </div>
             </div>

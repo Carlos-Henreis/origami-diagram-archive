@@ -105,14 +105,14 @@ export default async function DiagramPage({
           <a
             href={diagram.pdf}
             target="_blank"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-black font-medium hover:opacity-90 transition"
+            className="theme-primary-action inline-flex items-center gap-2 rounded-xl px-5 py-3 font-medium transition"
           >
             Download PDF diagram
           </a>
         </div>
       )}
       {/* Symbols Guide CTA */}
-      <div className="my-10 rounded-2xl border border-white/10 bg-zinc-900/70 p-5">
+      <div className="theme-card my-10 rounded-2xl border p-5">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h2 className="text-lg font-semibold text-zinc-100">
@@ -128,7 +128,7 @@ export default async function DiagramPage({
             href="/origami-symbols"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white px-4 py-2.5 text-sm font-medium text-black transition hover:opacity-90"
+            className="theme-primary-action inline-flex items-center justify-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium transition"
           >
             <BookOpen size={16} />
             Symbols Guide
@@ -147,7 +147,7 @@ export default async function DiagramPage({
           <a
             href={diagram.pdf}
             target="_blank"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-black font-medium hover:opacity-90 transition"
+            className="theme-primary-action inline-flex items-center gap-2 rounded-xl px-5 py-3 font-medium transition"
           >
             Download PDF diagram
           </a>

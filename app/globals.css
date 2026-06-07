@@ -203,3 +203,128 @@ textarea::placeholder {
 .theme-modal-backdrop {
   background-color: var(--overlay) !important;
 }
+
+/* Semantic UI layer: use these classes for new/updated components instead of
+   raw palette utilities so both themes stay visually coherent. */
+.theme-header {
+  background: color-mix(in srgb, var(--surface) 88%, transparent) !important;
+  border-color: var(--border) !important;
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--foreground) 5%, transparent);
+}
+
+.theme-page-title {
+  color: var(--foreground);
+}
+
+.theme-copy {
+  color: var(--muted);
+}
+
+.theme-eyebrow {
+  border-color: color-mix(in srgb, var(--accent) 32%, var(--border));
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.theme-surface,
+.theme-card {
+  background: color-mix(in srgb, var(--surface) 94%, transparent) !important;
+  border-color: var(--border) !important;
+  color: var(--foreground);
+}
+
+.theme-card {
+  box-shadow: 0 18px 55px -38px color-mix(in srgb, var(--foreground) 36%, transparent);
+}
+
+.theme-card-interactive {
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.theme-card-interactive:hover {
+  background: var(--surface-elevated) !important;
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--border)) !important;
+  box-shadow: 0 24px 70px -42px color-mix(in srgb, var(--accent) 42%, transparent);
+  transform: translateY(-2px);
+}
+
+.theme-input {
+  background: var(--surface-elevated) !important;
+  border-color: var(--border) !important;
+  color: var(--foreground) !important;
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--foreground) 5%, transparent);
+}
+
+.theme-input:focus {
+  border-color: color-mix(in srgb, var(--accent) 70%, var(--border)) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.theme-chip {
+  background: var(--surface) !important;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.theme-chip:hover {
+  border-color: color-mix(in srgb, var(--accent) 38%, var(--border));
+  color: var(--foreground);
+}
+
+.theme-chip-active,
+.theme-primary-action {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: var(--accent-foreground) !important;
+}
+
+.theme-secondary-action {
+  background: var(--surface-muted) !important;
+  border: 1px solid var(--border);
+  color: var(--foreground) !important;
+}
+
+.theme-secondary-action:hover,
+.theme-primary-action:hover {
+  filter: brightness(1.04);
+}
+
+.theme-settings-panel,
+.theme-modal-panel {
+  background: var(--surface-elevated) !important;
+  border-color: var(--border) !important;
+  color: var(--foreground);
+  box-shadow: 0 30px 90px -45px rgba(0, 0, 0, 0.7);
+}
+
+.theme-radio-option {
+  border-color: transparent;
+  color: var(--muted);
+}
+
+.theme-radio-option:hover {
+  background: var(--surface-muted) !important;
+  border-color: var(--border) !important;
+  color: var(--foreground);
+}
+
+.theme-radio-option-selected {
+  background: var(--accent-soft) !important;
+  border-color: color-mix(in srgb, var(--accent) 58%, var(--border)) !important;
+  color: var(--foreground);
+}
+
+.theme-image-caption {
+  color: white;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+}
+
+.theme-image-caption-muted {
+  color: rgba(255, 255, 255, 0.78);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+}
+
+.theme-on-dark {
+  color: white !important;
+}

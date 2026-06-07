@@ -24,7 +24,7 @@ export function AudioPlayer({ src }: AudioPlayerProps) {
   };
 
   return (
-    <div className="rounded-xl border border-white/10 bg-black/35 p-3">
+    <div className="theme-surface rounded-xl border p-3">
       <audio
         ref={audioRef}
         preload="none"
@@ -40,7 +40,7 @@ export function AudioPlayer({ src }: AudioPlayerProps) {
         <div className="h-full rounded-full bg-gradient-to-r from-amber-300/80 to-amber-500/80" style={{ width: `${progress}%` }} />
       </div>
       <div className="flex items-center justify-between">
-        <button type="button" onClick={togglePlay} className="inline-flex items-center gap-2 rounded-full border border-white/15 px-3 py-1.5 text-xs text-zinc-200 hover:bg-white/5">
+        <button type="button" onClick={togglePlay} className="theme-secondary-action inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs">
           {isPlaying ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5" />} {isPlaying ? "Pause" : "Play"}
         </button>
         <span className="inline-flex items-center gap-1 text-xs text-zinc-400"><Volume2 className="h-3.5 w-3.5" /> Preview</span>

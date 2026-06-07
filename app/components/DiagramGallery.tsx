@@ -105,7 +105,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
           <button
             type="button"
             key={item.slug}
-            className="group relative rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 text-left"
+            className="theme-card theme-card-interactive group relative overflow-hidden rounded-2xl border text-left"
             onClick={() => openModal(index)}
           >
             <div className="aspect-[4/3] overflow-hidden">
@@ -120,8 +120,8 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
             </div>
             <div className="theme-card-overlay pointer-events-none absolute inset-0 opacity-100 transition" />
             <div className="absolute bottom-0 left-0 p-4">
-              <p className="text-sm [color:rgba(255,255,255,0.78)]">{item.images.length} images</p>
-              <h3 className="text-lg font-semibold [color:white]">{item.title}</h3>
+              <p className="theme-image-caption-muted text-sm">{item.images.length} images</p>
+              <h3 className="theme-image-caption text-lg font-semibold">{item.title}</h3>
             </div>
           </button>
         ))}
@@ -133,7 +133,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
           onClick={closeModal}
         >
           <div
-            className="w-full max-w-5xl rounded-2xl border border-zinc-700 bg-zinc-950 p-4 md:p-6"
+            className="theme-modal-panel w-full max-w-5xl rounded-2xl border p-4 md:p-6"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="mb-4 flex items-center justify-between gap-3">
@@ -141,7 +141,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
               <button
                 type="button"
                 aria-label="Fechar modal"
-                className="rounded-full bg-zinc-800 p-2 text-zinc-200 hover:bg-zinc-700"
+                className="theme-secondary-action rounded-full p-2"
                 onClick={closeModal}
               >
                 <X size={18} />
@@ -149,7 +149,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
             </div>
 
             <div
-              className="relative overflow-hidden rounded-xl bg-zinc-900"
+              className="theme-surface relative overflow-hidden rounded-xl"
               onTouchStart={(event) => setTouchStartX(event.changedTouches[0].clientX)}
               onTouchEnd={(event) => {
                 if (touchStartX === null) return;
@@ -218,7 +218,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
                 <button
                   type="button"
                   onClick={handleShare}
-                  className="inline-flex items-center gap-2 rounded-md bg-zinc-800 px-4 py-2 text-sm font-medium text-zinc-100 hover:bg-zinc-700"
+                  className="theme-secondary-action inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium"
                 >
                   <Share2 size={16} />
                   Share
@@ -226,7 +226,7 @@ export default function DiagramGallery({ diagrams }: { diagrams: DiagramSummary[
 
                 <Link
                   href={`/diagrams/${openItem.slug}`}
-                  className="rounded-md bg-white px-4 py-2 text-sm font-medium text-zinc-950 hover:bg-zinc-200"
+                  className="theme-primary-action rounded-md px-4 py-2 text-sm font-medium"
                 >
                   Open Diagram Page
                 </Link>

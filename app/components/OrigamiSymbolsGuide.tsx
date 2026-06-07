@@ -251,7 +251,7 @@ export default function OrigamiSymbolsGuide() {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Search by symbol, fold, or action..."
-              className="w-full rounded-2xl border border-zinc-800 bg-zinc-900 py-4 pl-12 pr-4 text-sm text-zinc-100 outline-none transition placeholder:text-zinc-500 focus:border-zinc-500"
+              className="theme-input w-full rounded-2xl border py-4 pl-12 pr-4 text-sm outline-none transition"
             />
           </label>
 
@@ -262,8 +262,8 @@ export default function OrigamiSymbolsGuide() {
                 onClick={() => setCategory(item)}
                 className={`whitespace-nowrap rounded-full border px-4 py-2 text-sm transition ${
                   category === item
-                    ? "border-zinc-100 bg-zinc-100 text-zinc-950"
-                    : "border-zinc-800 bg-zinc-900 text-zinc-400 hover:border-zinc-600 hover:text-zinc-100"
+                    ? "theme-chip-active"
+                    : "theme-chip"
                 }`}
               >
                 {item}
@@ -281,7 +281,7 @@ export default function OrigamiSymbolsGuide() {
             <button
               key={symbol.id}
               onClick={() => setSelected(symbol)}
-              className="group rounded-3xl border border-zinc-800 bg-zinc-900/70 p-5 text-left transition hover:-translate-y-1 hover:border-zinc-600 hover:bg-zinc-900"
+              className="theme-card theme-card-interactive group rounded-3xl border p-5 text-left"
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-950">
@@ -310,15 +310,15 @@ export default function OrigamiSymbolsGuide() {
       </div>
 
       {filteredSymbols.length === 0 && (
-        <div className="mt-16 rounded-3xl border border-zinc-800 bg-zinc-900 p-10 text-center">
+        <div className="theme-card mt-16 rounded-3xl border p-10 text-center">
           <p className="text-lg font-medium text-zinc-100">No symbols found.</p>
           <p className="mt-2 text-zinc-500">Try another search term or remove the selected category.</p>
         </div>
       )}
 
       {selected && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 p-4 backdrop-blur-sm">
-          <div className="max-h-[92vh] w-full max-w-4xl overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-950 shadow-2xl">
+        <div className="theme-modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+          <div className="theme-modal-panel max-h-[92vh] w-full max-w-4xl overflow-hidden rounded-3xl border shadow-2xl">
             <div className="flex items-start justify-between gap-4 border-b border-zinc-800 p-6">
               <div>
                 <p className="text-sm text-zinc-500">{selected.category}</p>
@@ -327,7 +327,7 @@ export default function OrigamiSymbolsGuide() {
 
               <button
                 onClick={() => setSelected(null)}
-                className="rounded-full border border-zinc-800 p-2 text-zinc-400 transition hover:bg-zinc-900 hover:text-zinc-100"
+                className="theme-chip rounded-full p-2 transition"
                 aria-label="Close modal"
               >
                 <X className="h-5 w-5" />
@@ -336,7 +336,7 @@ export default function OrigamiSymbolsGuide() {
 
             <div className="grid max-h-[calc(92vh-96px)] overflow-y-auto lg:grid-cols-[0.9fr_1.1fr]">
               <div className="border-b border-zinc-800 p-6 lg:border-b-0 lg:border-r">
-                <div className="aspect-square rounded-3xl border border-zinc-800 bg-zinc-900 overflow-hidden">
+                <div className="theme-surface aspect-square overflow-hidden rounded-3xl border">
                   <img
                     src={selected.symbol}
                     alt={selected.term}
@@ -372,7 +372,7 @@ export default function OrigamiSymbolsGuide() {
                     </div>
                   </div>
                 ) : (
-                  <div className="mt-8 rounded-3xl border border-zinc-800 bg-zinc-900 p-5">
+                  <div className="theme-card mt-8 rounded-3xl border p-5">
                     <div className="flex items-center gap-3 text-zinc-300">
                       <Maximize2 className="h-5 w-5" />
                       <h3 className="font-medium">Video demonstration</h3>

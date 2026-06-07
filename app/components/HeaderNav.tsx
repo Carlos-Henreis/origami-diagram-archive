@@ -95,7 +95,7 @@ export function HeaderNav() {
       <div className="flex items-center gap-3 md:order-2">
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-700 text-zinc-300 transition hover:bg-zinc-900 hover:text-zinc-100"
+          className="theme-chip inline-flex h-10 w-10 items-center justify-center rounded-full transition"
           onClick={openSettings}
           aria-expanded={settingsOpen}
           aria-controls="site-settings"
@@ -107,7 +107,7 @@ export function HeaderNav() {
 
         <button
           type="button"
-          className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-sm text-zinc-300 transition hover:bg-zinc-900 md:hidden"
+          className="theme-chip inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm transition md:hidden"
           onClick={() => setOpen((prev) => !prev)}
           aria-expanded={open}
           aria-controls="site-nav"
@@ -124,7 +124,7 @@ export function HeaderNav() {
           <Link
             key={link.href}
             href={link.href}
-            className="rounded-full px-4 py-2 text-sm text-zinc-300 transition hover:bg-zinc-900 hover:text-zinc-100"
+            className="theme-chip rounded-full px-4 py-2 text-sm transition"
             onClick={() => setOpen(false)}
           >
             {link.label}
@@ -135,7 +135,7 @@ export function HeaderNav() {
       {settingsOpen && (
         <div
           id="site-settings"
-          className="absolute right-0 top-12 z-[110] w-[min(20rem,calc(100vw-3rem))] overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl shadow-black/40"
+          className="theme-settings-panel absolute right-0 top-12 z-[110] w-[min(20rem,calc(100vw-3rem))] overflow-hidden rounded-2xl border"
         >
           <div className="flex items-center justify-between border-b border-zinc-800 px-5 py-4">
             <div>
@@ -144,7 +144,7 @@ export function HeaderNav() {
             </div>
             <button
               type="button"
-              className="rounded-full p-2 text-zinc-400 transition hover:bg-zinc-800 hover:text-zinc-100"
+              className="theme-chip rounded-full p-2 transition"
               onClick={() => setSettingsOpen(false)}
               aria-label="Close settings"
             >
@@ -177,15 +177,15 @@ export function HeaderNav() {
                     aria-checked={selected}
                     className={`flex w-full items-start gap-3 rounded-xl border px-3 py-3 text-left transition ${
                       selected
-                        ? "border-amber-300/60 bg-amber-300/10 text-zinc-100"
-                        : "border-transparent text-zinc-300 hover:border-zinc-700 hover:bg-zinc-800/80"
+                        ? "theme-radio-option-selected"
+                        : "theme-radio-option"
                     }`}
                     onClick={() => selectTheme(option.value)}
                   >
                     <span
                       className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border ${
                         selected
-                          ? "border-amber-300 bg-amber-300 text-zinc-950"
+                          ? "theme-chip-active"
                           : "border-zinc-600"
                       }`}
                     >

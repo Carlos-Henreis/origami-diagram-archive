@@ -54,7 +54,7 @@ export default async function OrigamiSymbolsPage() {
           <a
             href="/pdfs/origami-symbols-legend.pdf"
             target="_blank"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-black font-medium hover:opacity-90 transition"
+            className="theme-primary-action inline-flex items-center gap-2 rounded-xl px-5 py-3 font-medium transition"
           >
             Download Symbols Legend PDF
           </a>
@@ -68,7 +68,7 @@ export default async function OrigamiSymbolsPage() {
           <a
             href="/pdfs/origami-symbols-legend.pdf"
             target="_blank"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-black font-medium hover:opacity-90 transition"
+            className="theme-primary-action inline-flex items-center gap-2 rounded-xl px-5 py-3 font-medium transition"
           >
             Download Symbols Legend PDF
           </a>

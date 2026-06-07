@@ -32,7 +32,7 @@ export default function RootLayout({
       <body className="bg-background text-foreground antialiased">
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <div className="flex min-h-screen flex-col">
-          <header className="relative z-[100] border-b border-zinc-800 bg-zinc-950/90 backdrop-blur">
+          <header className="theme-header relative z-[100] border-b backdrop-blur">
             <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-6 md:flex-row md:items-center md:justify-between">
               <h1 className="text-2xl font-semibold">
                 Origami Diagram Archive

@@ -10,7 +10,7 @@ export function AttributionCopyButton({ text }: AttributionCopyButtonProps) {
   return (
     <button
       type="button"
-      className="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/20 px-3 py-2 text-sm text-zinc-100 transition hover:bg-white/10"
+      className="theme-secondary-action mt-4 inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm transition"
       onClick={() => navigator.clipboard.writeText(text)}
     >
       <Copy className="h-4 w-4" /> Copy attribution
