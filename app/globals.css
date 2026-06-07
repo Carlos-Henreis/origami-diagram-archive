@@ -2,43 +2,35 @@
 @plugin "@tailwindcss/typography";
 
 /*
-  Theme palette
-  - dark is the product default
-  - light uses a warm washi-paper palette with consistent ink, sand, and amber accents
+  Dark mode is the product default. The theme toggle writes data-theme="light"
+  or data-theme="dark" on <html>; without stored preference the UI remains dark
+  even when the browser/OS is configured for light mode.
 */
 :root,
 [data-theme="dark"] {
   color-scheme: dark;
-  --background: #070806;
-  --background-soft: #0d100c;
-  --foreground: #f6f1e7;
-  --surface: #121510;
-  --surface-muted: #1b2018;
-  --surface-elevated: #20261d;
-  --border: #384031;
-  --muted: #b9b0a0;
-  --muted-strong: #ddd4c5;
-  --accent: #d6a13a;
-  --accent-foreground: #171108;
-  --accent-soft: rgba(214, 161, 58, 0.14);
-  --overlay: rgba(3, 5, 3, 0.78);
+  --background: #09090b;
+  --foreground: #f4f4f5;
+  --surface: #18181b;
+  --surface-muted: #27272a;
+  --surface-soft: rgba(24, 24, 27, 0.82);
+  --border: #3f3f46;
+  --muted: #a1a1aa;
+  --muted-strong: #d4d4d8;
+  --accent: #fbbf24;
 }
 
 [data-theme="light"] {
   color-scheme: light;
-  --background: #f6efe3;
-  --background-soft: #efe5d5;
-  --foreground: #241d16;
-  --surface: #fffaf1;
-  --surface-muted: #f0e4d2;
-  --surface-elevated: #ffffff;
-  --border: #d8c8ae;
-  --muted: #746654;
-  --muted-strong: #473a2c;
-  --accent: #b86b1c;
-  --accent-foreground: #fff8ee;
-  --accent-soft: rgba(184, 107, 28, 0.12);
-  --overlay: rgba(22, 18, 13, 0.76);
+  --background: #f7f1e8;
+  --foreground: #241c16;
+  --surface: #fffaf2;
+  --surface-muted: #efe4d3;
+  --surface-soft: rgba(255, 250, 242, 0.88);
+  --border: #d6c7b2;
+  --muted: #6f6358;
+  --muted-strong: #3c332c;
+  --accent: #b45309;
 }
 
 @theme inline {
@@ -48,158 +40,114 @@
   --font-mono: var(--font-geist-mono);
 }
 
-html,
-body {
-  background: var(--background) !important;
-}
-
 body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-main {
-  background: var(--background);
 }
 
 ::selection {
   background: color-mix(in srgb, var(--accent) 34%, transparent);
 }
 
-/* Theme-aware primitives used to normalize older Tailwind-only components. */
-html,
-body,
-main,
-.min-h-screen {
+/* Light-theme polish for components that were originally hard-coded dark. */
+[data-theme="light"] .bg-zinc-950,
+[data-theme="light"] .bg-zinc-950\/90,
+[data-theme="light"] .bg-black {
   background-color: var(--background) !important;
 }
 
-.bg-background,
-.bg-zinc-950,
-.bg-zinc-950\/90,
-.bg-black {
-  background-color: var(--background) !important;
+[data-theme="light"] .bg-zinc-900,
+[data-theme="light"] .bg-zinc-900\/60,
+[data-theme="light"] .bg-zinc-900\/70,
+[data-theme="light"] .bg-zinc-900\/80,
+[data-theme="light"] .bg-zinc-900\/90,
+[data-theme="light"] .bg-black\/30 {
+  background-color: var(--surface-soft) !important;
 }
 
-.bg-zinc-900,
-.bg-zinc-900\/60,
-.bg-zinc-900\/70,
-.bg-zinc-900\/80,
-.bg-zinc-900\/90,
-.bg-black\/30,
-.bg-black\/35 {
-  background-color: var(--surface) !important;
-}
-
-.bg-zinc-800,
-.bg-zinc-800\/80,
-.hover\:bg-zinc-800:hover,
-.hover\:bg-zinc-900:hover {
+[data-theme="light"] .bg-zinc-800,
+[data-theme="light"] .bg-zinc-800\/80,
+[data-theme="light"] .hover\:bg-zinc-800:hover,
+[data-theme="light"] .hover\:bg-zinc-900:hover {
   background-color: var(--surface-muted) !important;
 }
 
-.border-zinc-800,
-.border-zinc-700,
-.border-white\/10,
-.border-white\/15,
-.border-white\/20,
-.border-amber-100\/20,
-.hover\:border-zinc-600:hover,
-.hover\:border-amber-200\/30:hover {
-  border-color: var(--border) !important;
+[data-theme="light"] .bg-white {
+  background-color: #241c16 !important;
 }
 
-.text-foreground,
-.text-zinc-50,
-.text-zinc-100,
-.text-zinc-200 {
+[data-theme="light"] .text-white,
+[data-theme="light"] .text-zinc-50,
+[data-theme="light"] .text-zinc-100,
+[data-theme="light"] .text-zinc-200,
+[data-theme="light"] .hover\:text-white:hover,
+[data-theme="light"] .group:hover .group-hover\:text-white {
   color: var(--foreground) !important;
 }
 
-.text-zinc-300,
-.text-zinc-400,
-.text-zinc-500,
-.text-white\/80 {
+[data-theme="light"] .text-zinc-300,
+[data-theme="light"] .text-zinc-400,
+[data-theme="light"] .text-zinc-500,
+[data-theme="light"] .text-white\/80 {
   color: var(--muted) !important;
 }
 
-.text-amber-300\/80,
-.text-amber-200,
-.text-amber-100\/85,
-.text-amber-100 {
+[data-theme="light"] .text-black,
+[data-theme="light"] .text-zinc-900 {
+  color: #fffaf2 !important;
+}
+
+[data-theme="light"] .text-amber-200,
+[data-theme="light"] .text-amber-100\/85 {
   color: var(--accent) !important;
 }
 
-.bg-white,
-.bg-zinc-100 {
-  background-color: var(--accent) !important;
+[data-theme="light"] .border-zinc-800,
+[data-theme="light"] .border-zinc-700,
+[data-theme="light"] .border-white\/10,
+[data-theme="light"] .border-amber-100\/20,
+[data-theme="light"] .hover\:border-zinc-600:hover,
+[data-theme="light"] .hover\:border-amber-200\/30:hover {
+  border-color: var(--border) !important;
 }
 
-.border-zinc-100 {
-  border-color: var(--accent) !important;
-}
-
-.hover\:bg-zinc-200:hover {
-  background-color: color-mix(in srgb, var(--accent) 86%, var(--foreground) 14%) !important;
-}
-
-.text-black,
-.text-zinc-950,
-.text-zinc-900 {
-  color: var(--accent-foreground) !important;
-}
-
-input,
-textarea,
-select {
-  background-color: var(--surface) !important;
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  background-color: #fffaf2 !important;
   border-color: var(--border) !important;
   color: var(--foreground) !important;
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: color-mix(in srgb, var(--muted) 76%, transparent) !important;
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: #8a7a69 !important;
 }
 
-.prose-invert {
-  --tw-prose-body: var(--muted-strong);
-  --tw-prose-headings: var(--foreground);
-  --tw-prose-lead: var(--muted);
-  --tw-prose-links: var(--accent);
-  --tw-prose-bold: var(--foreground);
-  --tw-prose-counters: var(--muted);
-  --tw-prose-bullets: var(--accent);
-  --tw-prose-hr: var(--border);
-  --tw-prose-quotes: var(--foreground);
-  --tw-prose-quote-borders: var(--border);
-  --tw-prose-captions: var(--muted);
-  --tw-prose-code: var(--foreground);
-  --tw-prose-pre-code: var(--background);
-  --tw-prose-pre-bg: var(--foreground);
-  --tw-prose-th-borders: var(--border);
-  --tw-prose-td-borders: var(--border);
+[data-theme="light"] .prose-invert {
+  --tw-prose-body: #3c332c;
+  --tw-prose-headings: #241c16;
+  --tw-prose-lead: #5b5047;
+  --tw-prose-links: #92400e;
+  --tw-prose-bold: #241c16;
+  --tw-prose-counters: #6f6358;
+  --tw-prose-bullets: #b45309;
+  --tw-prose-hr: #d6c7b2;
+  --tw-prose-quotes: #241c16;
+  --tw-prose-quote-borders: #d6c7b2;
+  --tw-prose-captions: #6f6358;
+  --tw-prose-code: #241c16;
+  --tw-prose-pre-code: #f7f1e8;
+  --tw-prose-pre-bg: #241c16;
+  --tw-prose-th-borders: #c7b79e;
+  --tw-prose-td-borders: #d6c7b2;
 }
 
-.theme-hero-wash {
-  background:
-    radial-gradient(circle at 22% 6%, color-mix(in srgb, var(--accent) 17%, transparent), transparent 32%),
-    radial-gradient(circle at 76% 16%, rgba(20, 184, 166, 0.13), transparent 34%),
-    linear-gradient(135deg, var(--background), var(--background-soft));
+.theme-icon-moon,
+[data-theme="light"] .theme-icon-sun {
+  display: none;
 }
 
-.theme-grid {
-  opacity: 0.28;
-  background-image:
-    linear-gradient(color-mix(in srgb, var(--foreground) 8%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--foreground) 8%, transparent) 1px, transparent 1px);
-  background-size: 54px 54px;
-}
-
-.theme-card-overlay {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.38), transparent);
-}
-
-.theme-modal-backdrop {
-  background-color: var(--overlay) !important;
+[data-theme="light"] .theme-icon-moon {
+  display: block;
 }

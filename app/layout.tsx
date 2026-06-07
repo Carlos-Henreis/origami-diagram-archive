@@ -10,15 +10,7 @@ export const metadata = {
 const themeInitScript = `
   (() => {
     const storedTheme = window.localStorage.getItem("origami-diagram-archive-theme");
-    const preference = ["light", "dark", "system"].includes(storedTheme)
-      ? storedTheme
-      : "dark";
-    const resolvedTheme = preference === "system"
-      ? (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark")
-      : preference;
-
-    document.documentElement.dataset.theme = resolvedTheme;
-    document.documentElement.dataset.themePreference = preference;
+    document.documentElement.dataset.theme = storedTheme === "light" ? "light" : "dark";
   })();
 `;
 
@@ -29,10 +21,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="dark" suppressHydrationWarning>
-      <body className="bg-background text-foreground antialiased">
+      <body className="bg-zinc-950 text-zinc-100 antialiased">
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <div className="flex min-h-screen flex-col">
-          <header className="relative z-[100] border-b border-zinc-800 bg-zinc-950/90 backdrop-blur">
+          <header className="border-b border-zinc-800 bg-zinc-950/90 backdrop-blur">
             <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-6 md:flex-row md:items-center md:justify-between">
               <h1 className="text-2xl font-semibold">
                 Origami Diagram Archive

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Check, ChevronDown, Menu, Monitor, Moon, Settings, Sun, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { useState } from "react";
 
 const links = [
@@ -11,68 +11,9 @@ const links = [
   { href: "/music", label: "Music" },
 ];
 
-type ThemePreference = "dark" | "light" | "system";
-type ResolvedTheme = "dark" | "light";
+type Theme = "dark" | "light";
 
 const THEME_STORAGE_KEY = "origami-diagram-archive-theme";
-
-const themeOptions: Array<{
-  value: ThemePreference;
-  label: string;
-  description: string;
-  icon: React.ComponentType<{ className?: string }>;
-}> = [
-  {
-    value: "dark",
-    label: "Dark",
-    description: "Default high-contrast archive theme.",
-    icon: Moon,
-  },
-  {
-    value: "light",
-    label: "Light",
-    description: "Warmer paper-toned reading theme.",
-    icon: Sun,
-  },
-  {
-    value: "system",
-    label: "System",
-    description: "Follow this device when requested.",
-    icon: Monitor,
-  },
-];
-
-function getStoredPreference(): ThemePreference {
-  if (typeof window === "undefined") return "dark";
-
-  const storedPreference = window.localStorage.getItem(THEME_STORAGE_KEY);
-
-  if (
-    storedPreference === "light" ||
-    storedPreference === "dark" ||
-    storedPreference === "system"
-  ) {
-    return storedPreference;
-  }
-
-  return "dark";
-}
-
-function resolveTheme(preference: ThemePreference): ResolvedTheme {
-  if (preference !== "system") return preference;
-
-  return window.matchMedia("(prefers-color-scheme: light)").matches
-    ? "light"
-    : "dark";
-}
-
-function applyTheme(preference: ThemePreference) {
-  const resolvedTheme = resolveTheme(preference);
-
-  document.documentElement.dataset.theme = resolvedTheme;
-  document.documentElement.dataset.themePreference = preference;
-  window.localStorage.setItem(THEME_STORAGE_KEY, preference);
-}
 
 export function HeaderNav() {
   const [open, setOpen] = useState(false);
@@ -90,19 +31,27 @@ export function HeaderNav() {
     setThemePreference(preference);
   };
 
+  const toggleTheme = () => {
+    const currentTheme =
+      document.documentElement.dataset.theme === "light" ? "light" : "dark";
+    const nextTheme: Theme = currentTheme === "dark" ? "light" : "dark";
+
+    document.documentElement.dataset.theme = nextTheme;
+    window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+  };
+
   return (
-    <div className="relative flex w-full flex-col gap-3 md:w-auto md:flex-row md:items-center">
+    <div className="flex w-full flex-col gap-3 md:w-auto md:flex-row md:items-center">
       <div className="flex items-center gap-3 md:order-2">
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-700 text-zinc-300 transition hover:bg-zinc-900 hover:text-zinc-100"
-          onClick={openSettings}
-          aria-expanded={settingsOpen}
-          aria-controls="site-settings"
-          aria-label="Open settings"
-          title="Settings"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-700 text-zinc-300 transition hover:bg-zinc-900 hover:text-white"
+          onClick={toggleTheme}
+          aria-label="Toggle color theme"
+          title="Toggle color theme"
         >
-          <Settings className="h-4 w-4" />
+          <Sun className="theme-icon-sun h-4 w-4" />
+          <Moon className="theme-icon-moon h-4 w-4" />
         </button>
 
         <button
